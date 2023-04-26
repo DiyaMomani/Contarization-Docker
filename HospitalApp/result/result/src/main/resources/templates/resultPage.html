@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Table Example</title>
+    <style>
+    body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			background-color: #f2f2f2;
+		}
+css
+Copy code
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background-color: #fff;
+	}
+	table {
+		border-collapse: collapse;
+		width: 40%;
+		margin-bottom: 20px;
+	}
+	table, th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: center;
+	}
+	th {
+		background-color: green;
+		color: white;
+	}
+
+</style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Average Age of Patient</th>
+        <th>Minimum</th>
+        <th>Maximum</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+        <td th:text="${analytics.avgAgeOfPatient}"></td>
+        <td th:text="${analytics.min}"></td>
+        <td th:text="${analytics.max}"></td>
+    </tr >
+    </tbody>
+</table>
+
+</body>
+</html>

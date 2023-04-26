@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fail Page</title>
+    <style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			background-color: #f2f2f2;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+		}
+
+		.try-again-button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+			margin-top: 20px;
+		}
+
+		.try-again-button:hover {
+			background-color: #3e8e41;
+		}
+
+		.error-message {
+			color: red;
+			margin-top: 20px;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<form method="get" action="/login">
+    <div class="error-message">User name or password is wrong. Please try again.</div>
+    <button class="try-again-button">Try Again</button>
+</form>
+</body>
+</html>

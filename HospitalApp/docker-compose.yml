@@ -1,0 +1,58 @@
+version: '3'
+services:
+  mongo:
+
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+  
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+
+  analytics:
+    build: ./analytics/analytics
+    container_name: analytics
+    restart: always
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+      - mongo
+  
+  auth:
+    build: ./auth/auth
+    restart: always
+    container_name: auth
+    ports:
+      - "8081:8081"
+
+  
+  result:
+    build: ./result/result
+    container_name: result
+    restart: always
+    ports:
+      - "8082:8082"
+    depends_on:
+      - auth
+      - mongo
+  
+  hospitaldata:
+    build: ./hospitalData/hospitalData
+    restart: always
+    container_name: hospitalData
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - auth
+      - analytics
+      - result

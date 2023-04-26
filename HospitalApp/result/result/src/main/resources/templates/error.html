@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error Page</title>
+  <style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			background-color: #f2f2f2;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+		}
+
+		.error-message {
+			color: red;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+			margin-bottom: 20px;
+		}
+
+		.try-again-button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			font-family: Arial, sans-serif;
+		}
+
+		.try-again-button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+<form method="get" action="/login">
+  <p class="error-message">Input or port is invalid. Please try again.</p>
+  <button class="try-again-button">Try Again</button>
+</form>
+</body>
+</html>
